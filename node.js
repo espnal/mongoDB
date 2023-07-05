@@ -51,8 +51,7 @@ async function findListingsWithMinimumBedroomsBathroomsAndMostRecentReviews(clie
     maximumNumberOfResults = Number.MAX_SAFE_INTEGER
 } = {}) {
 
-    // See https://mongodb.github.io/node-mongodb-native/3.6/api/Collection.html#find for the find() docs
-    const cursor = client.db("sample_airbnb").collection("listingsAndReviews")
+const cursor = client.db("sample_airbnb").collection("listingsAndReviews")
         .find({
             bedrooms: { $gte: minimumNumberOfBedrooms },
             bathrooms: { $gte: minimumNumberOfBathrooms }
